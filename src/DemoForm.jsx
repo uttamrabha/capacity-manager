@@ -24,16 +24,16 @@ const FormDisabledDemo = () => {
     <>
       <Form
         labelCol={{
-          span: 10,
+          span: 100,
           color : "#fff"
         }}
         wrapperCol={{
-          span: 24,
+          span: 100,
         }}
         layout="horizontal"
         style={{
-          maxWidth: 600,
-          backgroundColor : '#fff',
+          maxWidth: 1000,
+          // backgroundColor : '#0e8820',
           color :  "#fff"
         }}
       >
@@ -43,12 +43,7 @@ const FormDisabledDemo = () => {
             <Radio value="pear"> Session Creation </Radio>
           </Radio.Group>
         </Form.Item>
-        <Form.Item label="Parking Operator Name"
-        style={{
-          maxWidth: 600,
-          backgroundColor : '#fff',
-          color :  "#fff"
-        }}>
+        <Form.Item label="Parking Operator Name">
           <Input />
         </Form.Item>
         <Form.Item label="Profile Type">

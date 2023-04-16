@@ -13,25 +13,26 @@ const headerStyle = {
   height: 64,
   paddingInline: 50,
   lineHeight: "64px",
-  backgroundColor: "#44db60",
+//   backgroundColor: "#44db60",
 };
 const contentStyle = {
   textAlign: "center",
   minHeight: 800,
   lineHeight: "120px",
   color: "#fff",
-  backgroundColor: "#44db60",
+  padding: '40px'
+//   backgroundColor: "#44db60",
 };
 const siderStyle = {
   textAlign: "center",
   lineHeight: "120px",
   color: "#fff",
-  backgroundColor: "#44db60",
+  backgroundColor: "#2ed14f",
 };
 const footerStyle = {
   textAlign: "center",
   color: "#fff",
-  backgroundColor: "#44db60",
+//   backgroundColor: "#44db60",
 };
 const DemoTest = () => {
   let navigate = useNavigate();
@@ -47,13 +48,15 @@ const DemoTest = () => {
       style={{
         width: "100%",
       }}
-      size={[0, 70]}
+      size={[30, 70]}
     >
       <Layout>
-        <Sider style={siderStyle}></Sider>
+        <Sider style={siderStyle}>
+            <img src={'https://tenant-logo-gmp-prod.s3.amazonaws.com/logo.png'}height={70} width={200} padding={50} alt="header"/>
+        </Sider>
         <Layout>
           <Header style={headerStyle}>
-            <img src={headerLogo} alt="header"/>
+            Welcome To Get My Parking
           </Header>
           <Content style={contentStyle}>
             <DemoForm/>
