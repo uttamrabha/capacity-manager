@@ -48,25 +48,25 @@ const FormDisabledDemo = () => {
         </Form.Item>
         <Form.Item label="Profile Type">
           <Select>
-            <Select.Option value="demo">Personal</Select.Option>
-            <Select.Option value="demo">Business</Select.Option>
-            <Select.Option value="demo">Corporate</Select.Option>
+            <Select.Option value="personal">Personal</Select.Option>
+            <Select.Option value="business">Business</Select.Option>
+            <Select.Option value="corporate">Corporate</Select.Option>
           </Select>
         </Form.Item>
         <Form.Item label="Select Country">
           <Select>
-            <Select.Option value="demo">INGENICO_AUSTRIA</Select.Option>
-            <Select.Option value="demo">NETS_POSTPAY_SWEDEN</Select.Option>
-            <Select.Option value="demo">NMI_ONEPARKING</Select.Option>
-            <Select.Option value="demo">AUTOMATION_DENMARK</Select.Option>
-            <Select.Option value="demo">GLOBAL_PERMITS</Select.Option>
+            <Select.Option value="ingenico_austria">INGENICO_AUSTRIA</Select.Option>
+            <Select.Option value="nets_postpay">NETS_POSTPAY_SWEDEN</Select.Option>
+            <Select.Option value="nmi_oneparking">NMI_ONEPARKING</Select.Option>
+            <Select.Option value="automation_denmark">AUTOMATION_DENMARK</Select.Option>
+            <Select.Option value="global_permits">GLOBAL_PERMITS</Select.Option>
           </Select>
         </Form.Item>
         <Form.Item label="Product Type">
           <Select>
-            <Select.Option value="demo">Pass Master</Select.Option>
-            <Select.Option value="demo">Pre-Booking</Select.Option>
-            <Select.Option value="demo">STP Product</Select.Option>
+            <Select.Option value="pass_master">Pass Master</Select.Option>
+            <Select.Option value="pre_booking">Pre-Booking</Select.Option>
+            <Select.Option value="stp_product">STP Product</Select.Option>
           </Select>
         </Form.Item>
         <Form.Item label="DatePicker">
