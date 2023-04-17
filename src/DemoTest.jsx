@@ -39,9 +39,6 @@ const DemoTest = () => {
   const redirectToForm = () => {
     navigate("/form");
   };
-  const redirectToCalender = () => {
-    navigate("/calender");
-  };
   return (
     <Space
       direction="vertical"

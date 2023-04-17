@@ -32,8 +32,6 @@ const App = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" Component={() => <DemoTest />} />
-      <Route path="/form" Component={() =><DemoForm />} />
-      <Route path="/calender" Component={() => <DemoCalender/>} />
     </Routes>
   </BrowserRouter>
 );
