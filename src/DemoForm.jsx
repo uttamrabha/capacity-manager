@@ -47,7 +47,7 @@ const FormDisabledDemo = () => {
             <Radio value="pear">Session Capacity</Radio>
           </Radio.Group>
         </Form.Item>
-        <Form.Item label="Select Company Name">
+        <Form.Item label="Select Company Name"  style={{display: 'flex'}}>
           <Select defaultValue={'ingenico_austria'} >
             <Select.Option value="ingenico_austria">INGENICO_AUSTRIA</Select.Option>
             <Select.Option value="nets_postpay">NETS_POSTPAY_SWEDEN</Select.Option>
@@ -56,7 +56,7 @@ const FormDisabledDemo = () => {
             <Select.Option value="global_permits">GLOBAL_PERMITS</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item label="Profile Type">
+        <Form.Item label="Profile Type" style={{width: '300px'}}>
           <Select defaultValue={'all'}>
           <Select.Option value="all">All</Select.Option>
           <Select.Option value="personal">Personal</Select.Option>
@@ -64,16 +64,16 @@ const FormDisabledDemo = () => {
           <Select.Option value="corporate">Corporate</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item label="Product Type">
+        <Form.Item label="Product Type" style={{display: 'flex'}}>
           <Select value={capacity === 'apple' ? 'pass_master' : 'stp_product'}>
             <Select.Option value="pass_master">Pass Master</Select.Option>
             <Select.Option value="pre_booking">Pre-Booking</Select.Option>
             <Select.Option value="stp_product">STP Product</Select.Option>
           </Select>
         </Form.Item>
-        
-        <Form.Item label="Pass Master ID">
         <div style={{display: 'flex'}}>
+        <Form.Item label="Pass Master ID">
+        
         <Form.Item label="Parking">
           <Select defaultValue={'p1'}>
             <Select.Option value="p1">AUTOMATION_ACCESS_TAX_IN</Select.Option>
@@ -89,9 +89,9 @@ const FormDisabledDemo = () => {
         <Form.Item label="Parking Lot">
           <Input />
         </Form.Item>
-        </div>
+        
         </Form.Item>
-       
+        </div>
         <div style={{display: 'flex'}}>
         <Form.Item label="Capacity Requirement">
           <Select defaultValue={type} onChange={(data) => {
@@ -101,7 +101,7 @@ const FormDisabledDemo = () => {
             <Select.Option value="break">Specific Date Ranges</Select.Option>
           </Select>
         </Form.Item >
-        <Form.Item style={{ marginLeft: "10px" , marginRight: "10px" }}>
+        <Form.Item style={{ marginLeft: "10px" , marginRight:"10px" }}>
           <DatePicker />
         </Form.Item>
         <Form.Item label="Enter Capacity Required">
