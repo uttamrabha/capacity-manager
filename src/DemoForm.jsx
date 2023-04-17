@@ -108,7 +108,7 @@ const FormDisabledDemo = () => {
           <Input />
         </Form.Item>
         </div>
-        <Form.Item>
+        <Form.Item style={{width: '300px'}}>
           <Button type="primary" block onClick={<DemoCalender/>}>CONFIRM AND SAVE DETAILS</Button>
         </Form.Item>
       </Form>
