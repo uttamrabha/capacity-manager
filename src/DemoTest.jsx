@@ -62,6 +62,8 @@ const DemoTest = () => {
             <DemoForm/>
           </Content>
           <Footer style={footerStyle}>
+          Get My Parking © 2023 
+          v2.68.56
           </Footer>
         </Layout>
       </Layout>

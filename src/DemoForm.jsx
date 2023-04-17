@@ -21,6 +21,8 @@ const { TextArea } = Input;
 const FormDisabledDemo = () => {
   const [componentDisabled, setComponentDisabled] = useState(true);
   const [capacity, setCapacity] = useState('apple')
+  const [type, setType] = useState('continuous')
+
   return (
     <>
       <Form
@@ -85,16 +87,16 @@ const FormDisabledDemo = () => {
           </Select>
         </Form.Item>
         <Form.Item label="Parking Lot">
-          <Select defaultValue={'lot'}>
-            <Select.Option value="lot"> </Select.Option>
-          </Select>
+          <Input />
         </Form.Item>
         </div>
         </Form.Item>
         </div>
         <div style={{display: 'flex'}}>
         <Form.Item label="Capacity Requirement">
-          <Select defaultValue={'continuous'}>
+          <Select defaultValue={type} onChange={(data) => {
+            setCapacity(data.target.value)
+          }}>
             <Select.Option value="continuous">Continuous</Select.Option>
             <Select.Option value="break">Specific Date Ranges</Select.Option>
           </Select>
@@ -107,7 +109,7 @@ const FormDisabledDemo = () => {
         </Form.Item>
         </div>
         <Form.Item>
-          <Button onClick={<DemoCalender/>}>CONFIRM AND SAVE DETAILS</Button>
+          <Button type="primary" block onClick={<DemoCalender/>}>CONFIRM AND SAVE DETAILS</Button>
         </Form.Item>
       </Form>
     </>
