@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   Cascader,
@@ -14,14 +15,40 @@ import {
   TreeSelect,
   Upload,
 } from 'antd';
+import { Card, List } from 'antd';
 import { useState } from 'react';
 import DemoCalender from './DemoCalender';
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
+const sportsData = ["BasketBall", "Cricket", "Football", "Golf"];
 const FormDisabledDemo = () => {
   const [componentDisabled, setComponentDisabled] = useState(true);
   const [capacity, setCapacity] = useState('apple')
   const [type, setType] = useState('continuous')
+  const [valueArray,setValueArray] = useState([])  
+  const options = [
+    {label:'AUTOMATION_ACCESS_TAX_IN', value:'p1'},
+    {label:'EBT_PnD _PostPay 2.2',value:'p2'},
+    {label:'EBTPnD Postpay CST Timezone',value:'p3'},
+    {label:'CHECKOUTPOSTPAY',value:'p4'},
+    {label:'EBt PnD MST Time Zone',value:'p5'},
+    {label:'Prepay_TAX_IN',value:'p6'},
+    {label:'HECKOUT_PREPAY2',value:'p7'},
+    {label:'PnD Postpay CST Timezone',value:'p8'}
+  ]
+
+  // const redirectToSavedDetails = () => {
+  //   const navigate = useNavigate();
+  //   const handleClick = () => {
+  //     navigate("/path/to/push");
+  // }
+  // }
+
+
+  const setSelectedValue = value => {
+    setValueArray([...valueArray,options.find(option=>option.value === value).label])
+    
+  }
 
   return (
     <>
@@ -74,20 +101,28 @@ const FormDisabledDemo = () => {
         <div style={{display: 'flex'}}>
         <Form.Item label="Pass Master ID">
         
-        <Form.Item label="Parking">
-          <Select defaultValue={'p1'}>
-            <Select.Option value="p1">AUTOMATION_ACCESS_TAX_IN</Select.Option>
-            <Select.Option value="p2">EBT_PnD _PostPay 2.2</Select.Option>
-            <Select.Option value="p3">EBTPnD Postpay CST Timezone</Select.Option>
-            <Select.Option value="p4">CHECKOUTPOSTPAY</Select.Option>
-            <Select.Option value="p5">EBt PnD MST Time Zone</Select.Option>
-            <Select.Option value="p6">Prepay_TAX_IN</Select.Option>
-            <Select.Option value="p7">CHECKOUT_PREPAY2</Select.Option>
-            <Select.Option value="p8">PnD Postpay CST Timezone</Select.Option>
-          </Select>
+        <Form.Item label="Parking" >
+          <Select  mode="multiple" options={options} onSelect={e=>setSelectedValue(e)}/>
+        
         </Form.Item>
         <Form.Item label="Parking Lot">
-          <Input />
+        <List
+    // grid={{
+    //   gutter: 16,
+    //   xs: 1,
+    //   sm: 2,
+    //   md: 4,
+    //   lg: 4,
+    //   xl: 6,
+    //   xxl: 3,
+    // }}
+    dataSource={valueArray}
+    renderItem={(item) => (
+      <List.Item>
+        <Card>{item}</Card>
+      </List.Item>
+    )}
+  />
         </Form.Item>
         
         </Form.Item>
@@ -109,7 +144,7 @@ const FormDisabledDemo = () => {
         </Form.Item>
         </div>
         <Form.Item style={{width: '300px'}}>
-          <Button type="primary" block onClick={<DemoCalender/>}>CONFIRM AND SAVE DETAILS</Button>
+          <Button type="primary"  >CONFIRM AND SAVE DETAILS</Button>
         </Form.Item>
       </Form>
     </>
