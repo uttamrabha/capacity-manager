@@ -20,6 +20,7 @@ const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const FormDisabledDemo = () => {
   const [componentDisabled, setComponentDisabled] = useState(true);
+  const [capacity, setCapacity] = useState('apple')
   return (
     <>
       <Form
@@ -38,13 +39,12 @@ const FormDisabledDemo = () => {
         }}
       >
         <Form.Item label="Type">
-          <Radio.Group>
-            <Radio value="apple"> Permits </Radio>
-            <Radio value="pear"> Session Creation </Radio>
+          <Radio.Group defaultValue={capacity} onChange={(data) => {
+            setCapacity(data.target.value)
+          }}>
+            <Radio value="apple">Purchase Capacity </Radio>
+            <Radio value="pear">Session Capacity</Radio>
           </Radio.Group>
-        </Form.Item>
-        <Form.Item label="Parking Operator Name">
-          <Input />
         </Form.Item>
         <Form.Item label="Profile Type">
           <Select>
@@ -54,7 +54,7 @@ const FormDisabledDemo = () => {
           </Select>
         </Form.Item>
         <Form.Item label="Select Country">
-          <Select>
+          <Select defaultValue={'ingenico_austria'} >
             <Select.Option value="ingenico_austria">INGENICO_AUSTRIA</Select.Option>
             <Select.Option value="nets_postpay">NETS_POSTPAY_SWEDEN</Select.Option>
             <Select.Option value="nmi_oneparking">NMI_ONEPARKING</Select.Option>
@@ -63,18 +63,27 @@ const FormDisabledDemo = () => {
           </Select>
         </Form.Item>
         <Form.Item label="Product Type">
-          <Select>
+          <Select value={capacity === 'apple' ? 'pass_master' : 'stp_product'}>
             <Select.Option value="pass_master">Pass Master</Select.Option>
             <Select.Option value="pre_booking">Pre-Booking</Select.Option>
             <Select.Option value="stp_product">STP Product</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item label="DatePicker">
-          <DatePicker />
+        <Form.Item label="Capacity Requirement">
+          <Select>
+            <Select.Option value="continuous">Continuous</Select.Option>
+            <Select.Option value="break">Specific Date Ranges</Select.Option>
+          </Select>
         </Form.Item>
-        <Form.Item label="RangePicker">
+        <div style={{display: 'flex '}}>
+        <Form.Item label="Please select date range for booking slots - ">
           <RangePicker />
         </Form.Item>
+        <Form.Item>
+          <RangePicker />
+        </Form.Item>
+
+        </div>
         <Form.Item>
           <Button onClick={<DemoCalender/>}>CONFIRM AND SAVE DETAILS</Button>
         </Form.Item>
