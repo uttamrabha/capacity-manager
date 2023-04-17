@@ -47,10 +47,11 @@ const FormDisabledDemo = () => {
           </Radio.Group>
         </Form.Item>
         <Form.Item label="Profile Type">
-          <Select>
-            <Select.Option value="personal">Personal</Select.Option>
-            <Select.Option value="business">Business</Select.Option>
-            <Select.Option value="corporate">Corporate</Select.Option>
+          <Select defaultValue={'all'}>
+          <Select.Option value="all">All</Select.Option>
+          <Select.Option value="personal">Personal</Select.Option>
+          <Select.Option value="business">Business</Select.Option>
+          <Select.Option value="corporate">Corporate</Select.Option>
           </Select>
         </Form.Item>
         <Form.Item label="Select Country">
