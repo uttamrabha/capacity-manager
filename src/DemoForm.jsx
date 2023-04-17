@@ -71,7 +71,7 @@ const FormDisabledDemo = () => {
             <Select.Option value="stp_product">STP Product</Select.Option>
           </Select>
         </Form.Item>
-        <div style={{display: 'flex'}}>
+        
         <Form.Item label="Pass Master ID">
         <div style={{display: 'flex'}}>
         <Form.Item label="Parking">
@@ -91,7 +91,7 @@ const FormDisabledDemo = () => {
         </Form.Item>
         </div>
         </Form.Item>
-        </div>
+       
         <div style={{display: 'flex'}}>
         <Form.Item label="Capacity Requirement">
           <Select defaultValue={type} onChange={(data) => {
@@ -100,8 +100,8 @@ const FormDisabledDemo = () => {
             <Select.Option value="continuous">Continuous</Select.Option>
             <Select.Option value="break">Specific Date Ranges</Select.Option>
           </Select>
-        </Form.Item>
-        <Form.Item>
+        </Form.Item >
+        <Form.Item style={{ marginLeft: "10px" , marginRight: "10px" }}>
           <DatePicker />
         </Form.Item>
         <Form.Item label="Enter Capacity Required">

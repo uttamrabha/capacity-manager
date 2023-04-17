@@ -13,7 +13,7 @@ const headerStyle = {
   height: 64,
   paddingInline: 50,
   lineHeight: "64px",
-//   backgroundColor: "#44db60",
+  backgroundColor: "#002161",
 };
 const contentStyle = {
   textAlign: "left",
@@ -27,7 +27,7 @@ const siderStyle = {
   textAlign: "center",
   lineHeight: "120px",
   color: "#fff",
-  backgroundColor: "#2ed14f",
+  backgroundColor: "#002161",
 };
 const footerStyle = {
   textAlign: "center",
@@ -52,7 +52,7 @@ const DemoTest = () => {
     >
       <Layout>
         <Sider style={siderStyle}>
-            <img src={'https://tenant-logo-gmp-prod.s3.amazonaws.com/logo.png'}height={70} width={200} padding={50} alt="header"/>
+            <img src={'https://gmpone-admin-dev.getmyparking.com/logos/gmp-logo-white.png'}height={70} width={200} padding={50} alt="header"/>
         </Sider>
         <Layout>
           <Header style={headerStyle}>
