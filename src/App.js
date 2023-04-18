@@ -32,6 +32,7 @@ const App = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" Component={() => <DemoTest />} />
+      <Route path="/calender" Component={() => <DemoCalender />} />
     </Routes>
   </BrowserRouter>
 );

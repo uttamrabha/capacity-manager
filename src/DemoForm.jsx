@@ -22,6 +22,7 @@ const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const sportsData = ["BasketBall", "Cricket", "Football", "Golf"];
 const FormDisabledDemo = () => {
+  let navigate = useNavigate();
   const [componentDisabled, setComponentDisabled] = useState(true);
   const [capacity, setCapacity] = useState("apple");
   const [type, setType] = useState("continuous");
@@ -29,7 +30,9 @@ const FormDisabledDemo = () => {
   const addNewSlot = () => {
     setSlots([...slots, { value: "break", capacity: "500" }]);
   };
-
+  const redirectToCalender = () => {
+    navigate("/calender");
+  };
   const handleSlots = () => {
     return slots.map((slot) => {
       return (
@@ -67,20 +70,9 @@ const FormDisabledDemo = () => {
     {label:'HECKOUT_PREPAY2',value:'p7'},
     {label:'PnD Postpay CST Timezone',value:'p8'}
   ]
-
-  // const redirectToSavedDetails = () => {
-  //   const navigate = useNavigate();
-  //   const handleClick = () => {
-  //     navigate("/path/to/push");
-  // }
-  // }
-
-
-  const setSelectedValue = value => {
+const setSelectedValue = value => {
     setValueArray([...valueArray,options.find(option=>option.value === value).label])
-    
-  }
-
+}
   return (
     <>
       <Form
@@ -104,7 +96,7 @@ const FormDisabledDemo = () => {
               setCapacity(data.target.value);
             }}
           >
-            <Radio value="apple">Purchase Capacity </Radio>
+            <Radio value="apple">Purchase Capacity</Radio>
             <Radio value="pear">Session Capacity</Radio>
           </Radio.Group>
         </Form.Item>
@@ -147,15 +139,6 @@ const FormDisabledDemo = () => {
         </Form.Item>
         <Form.Item label="Parking Lot">
         <List
-    // grid={{
-    //   gutter: 16,
-    //   xs: 1,
-    //   sm: 2,
-    //   md: 4,
-    //   lg: 4,
-    //   xl: 6,
-    //   xxl: 3,
-    // }}
     dataSource={valueArray}
     renderItem={(item) => (
       <List.Item>
@@ -199,7 +182,7 @@ const FormDisabledDemo = () => {
               <Form.Item style={{ marginLeft: "10px", marginRight: "10px" }}>
                 <RangePicker />
               </Form.Item>
-              <Form.Item label="CAPACITY (MAX)">
+              <Form.Item label="CAPACITY(MAX)">
                 <Input />
               </Form.Item>
               <Form.Item style={{ width: "250px" }}>
@@ -213,7 +196,7 @@ const FormDisabledDemo = () => {
         {type === "break" && handleSlots()}
 
         <Form.Item style={{ width: "300px" }}>
-          <Button type="primary" block onClick={<DemoCalender />}>
+          <Button type="primary" block onClick={redirectToCalender}>
             CONFIRM AND SAVE DETAILS
           </Button>
         </Form.Item>

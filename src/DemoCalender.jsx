@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import { Alert, Calendar } from 'antd';
 import dayjs from 'dayjs';
 const DemoCalender = () => {
-  const [value, setValue] = useState(() => dayjs('2017-01-25'));
-  const [selectedValue, setSelectedValue] = useState(() => dayjs('2017-01-25'));
+  const [value, setValue] = useState(() => dayjs('2023-04-18'));
+  const [selectedValue, setSelectedValue] = useState(() => dayjs('2023-04-18'));
   const onSelect = (newValue) => {
     setValue(newValue);
     setSelectedValue(newValue);
   };
   const onPanelChange = (newValue) => {
     setValue(newValue);
-    
   };
   return (
     <>
