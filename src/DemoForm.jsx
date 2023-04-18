@@ -182,7 +182,9 @@ company:selectedCompany} });
                 )}
               />
             </Form.Item>
-
+            <Form.Item label="Set Rule">
+                <Input/>
+              </Form.Item>
           </Form.Item>
         </div>
         <Form.Item style={{ width: "80px" }}>
