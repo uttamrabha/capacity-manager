@@ -139,18 +139,18 @@ company:selectedCompany} });
           </Radio.Group>
         </Form.Item>
         <Form.Item label="Select Company Name" style={{ display: "flex" }}>
-          <Select defaultValue={"ingenico_austria"} onSelect={(e)=> getSelectedCompany(e)} >
-            <Select.Option value="ingenico_austria" >
+          <Select defaultValue={"INGENICO_AUSTRIA"} onSelect={(e)=> getSelectedCompany(e)} >
+            <Select.Option value="INGENICO_AUSTRIA" >
               INGENICO_AUSTRIA
             </Select.Option>
-            <Select.Option value="nets_postpay">
+            <Select.Option value="NETS_POSTPAY_SWEDEN">
               NETS_POSTPAY_SWEDEN
             </Select.Option>
-            <Select.Option value="nmi_oneparking">NMI_ONEPARKING</Select.Option>
-            <Select.Option value="automation_denmark">
+            <Select.Option value="NMI_ONEPARKING">NMI_ONEPARKING</Select.Option>
+            <Select.Option value="AUTOMATION_DENMARK">
               AUTOMATION_DENMARK
             </Select.Option>
-            <Select.Option value="global_permits">GLOBAL_PERMITS</Select.Option>
+            <Select.Option value="GLOBAL_PERMITS">GLOBAL_PERMITS</Select.Option>
           </Select>
         </Form.Item>
         <Form.Item label="Profile Type" style={{ width: "300px" }}>
@@ -158,10 +158,11 @@ company:selectedCompany} });
           </Select>
         </Form.Item>
         <Form.Item label="Product Type" style={{ display: "flex" }}>
-          <Select placeholder="Select Product Type" onSelect={(e)=>{getProductType(e)}}>
+        
+          <Select value={capacity === "purchase_capacity" ? "Pass Master" : "STP Product"} onSelect={(e)=>{getProductType(e)}}>
             <Select.Option value="Pass Master">Pass Master</Select.Option>
             <Select.Option value="Pre-Booking">Pre-Booking</Select.Option>
-            <Select.Option value="STP Productt">STP Product</Select.Option>
+            <Select.Option value="STP Product">STP Product</Select.Option>
           </Select>
         </Form.Item>
         <div style={{ display: 'flex' }}>

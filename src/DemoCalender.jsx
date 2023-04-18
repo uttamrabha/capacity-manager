@@ -15,20 +15,20 @@ const DemoCalender = () => {
     setValue(newValue);
   };
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: '50%' }}>
+    <div style={{ display: 'flex' ,margin:'50px' }}>
+      <div style={{ width: '50%' ,border:"1px solid black", display: "flex", flexDirection:"column",alignItems:"center",height:"fit-content", padding:"10px"}}>
         
         <div style={{display:"flex",alignItems:"center"}}>
           <span>Type : </span>
-        {state.capacity =="purchase_capacity" && <p>Purchase Capacity</p> || <p>Session Capacity</p>}
+        {state.capacity =="purchase_capacity" && <p> Purchase Capacity</p> || <p> Session Capacity</p>}
         </div>
 
-        <div style={{display:"flex", alignItems:"center"}}>
+        <div style={{display:"flex",alignItems:"center"}}>
           
-          {state.selectedCompany && 
+          {state.company && 
           <div>
-            <span>Company Type : </span>
-            <p>{state.selectedCompany}</p>
+            <span>Company Type : {state.company}</span>
+            <p></p>
           </div>
           }
           </div>
@@ -37,8 +37,8 @@ const DemoCalender = () => {
           
           {state.profile && 
           <div>
-            <span>Profile Type : </span>
-            <p>{state.profile}</p>
+            <span>Profile Type :  {state.profile}</span>
+            <p></p>
           </div>
           }
           </div>
@@ -47,20 +47,22 @@ const DemoCalender = () => {
           
         {state.product && 
         <div>
-          <span>Product Type : </span>
-          <p>{state.product}</p>
+          <span>Product Type : {state.product}</span>
+          <p></p>
         </div>
         }
         </div>
         
         <div style={{display:"flex", alignItems:"center"}}>
 
-        {state.valueArray &&
+        {state.valueArray.length>0 &&
+        
         <div>
-          <span>Parking Selected</span>
+          {console.log(state.valueArray)}
+          <span>Parking Selected : 
         {state.valueArray.map((arrvalue)=> {
           return <p>{arrvalue}</p>
-        })}
+        })}</span>
         </div>
         } 
         </div>
@@ -69,18 +71,18 @@ const DemoCalender = () => {
           
           {state.capacityType && 
           <div>
-            <span>Capacity Type : </span>
-            <p>{state.capacityType}</p>
+            <span>Capacity Type : {state.capacityType}</span>
+            
           </div>
           }
           </div>
         
           <div style={{display:"flex", alignItems:"center"}}>
           
-          {state.capacityRequired && 
+          {state.reqCapacity && 
           <div>
-            <span>Capacity Required : </span>
-            <p>{state.capacityRequired}</p>
+            <span>Capacity Required : {state.reqCapacity}</span>
+            
           </div>
           }
           </div>
